@@ -1,8 +1,10 @@
 import requests
 import json
 
-url = "http://127.0.0.1:4000/prediction"
+# Endpoint URL
+url = "https://clzut41m4.paperspacegradient.com/model-serving/des4z1prl34tt5o:predict"
 
+# Request
 payload = json.dumps({
   "acousticness": 0.344719513,
   "danceability": 0.758067547,
@@ -13,10 +15,12 @@ payload = json.dumps({
   "tempo": 101.993,
   "valence": 0.443876228
 })
+
 headers = {
   'Content-Type': 'application/json'
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
 
+# Response
 print(response.text)
